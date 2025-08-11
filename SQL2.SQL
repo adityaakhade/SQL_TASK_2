@@ -1,44 +1,65 @@
--- TASK 2: Data Insertion and Handling NULLs
+--TASK 2
 
--- Insert data into Customers
-INSERT INTO Customers (Name, Email, Phone, Address)
-VALUES 
-('ADITYA AKHADE ', 'ADITYAAKHADE123@GMAIL.COM', '7719840410', 'PUNE '),
-('SUNNY DHUMAL ', 'SUNNYDHUMAL123@GMAIL.COM', NULL, 'PUNE'),
-('RUSHIKESH BHONDAVE ', 'raj@example.com', '9067541415', NULL);
+ INSERT INTO CUSTOMERS 
+ VALUES
+ (1,'ADITYA','AKHADE','ADITYAAKHADE123@GMAIL.COM',7719840410,'PUNE','16-10-25'),
+ (2,'RUSHIKESH','BHONDAVE','RUSHIKESHBHONDAVE123@GMAIL.COM',9067541415,'MUMBAI','25-05-25'),
+ (3,'SUNNY','DHUMAL','SUNNYDHUMAL@1234',9022535551,'PUNE','29-06-24'),
+ (4,'SHEKHAR','DHUMAL','SHEKHARDHUMAL5152',9086355322,'PUNE','23-02-24'),
+ (5,'AMBADY','SANTHOSH','AMBADYSANTHOSH876',1234567890,'KERALA','12-05-23'),
+ (6,'KIRAN','NARUTE','KIRANNARUTE@GMAIL.COM',9860737653, 'ANDHRA PRADESH','23-08-2016'),
+ (7,'SAMEER',' BHOSALE', 'SAMEERBHOSALE@GMAIL.COM',9579244276, 'KARNATAKA', '12-03-2019');
 
--- Insert data into Categories
-INSERT INTO Categories (Name, Description)
-VALUES 
-('Electronics', 'Devices like phones, laptops, etc.'),
-('Clothing', 'Men clothing'),
-('Books', NULL);
+INSERT INTO PRODUCTS 
+VALUES
+(1,'WIRELESS MOUSE', 599.0,120 ),
+(2,'MECHANICAL KEYBOARD',2499.00,80),
+(3,'USB C CHARGING CABLE',299.00,200),
+(4,'BLUETOOTH HEADPHONES',1799.00,60),
+(5,'LAPTOP BAGPACK',1499.00,40),
+(6,'SMART WATCH',3499.00,50 ),
+(7,'LED MONITOR',7999.00,25),
+(8,'EXTERNAL HARDWARE DRIVE',4499.00,30),
+(9,'SMART PHONE STAND',199.00,150),
+(10,'GAMING CHAIR',12999.00,10);
 
--- Insert data into Products
-INSERT INTO Products (Name, Category_ID, Price, Stock, Description)
-VALUES 
-('Smartphone', 1, 19999.99, 50, 'Latest 5G phone'),
-('T-Shirt', 2, 499.00, 200, 'Cotton T-shirt'),
-('Novel', 3, 299.50, 150, NULL);
+INSERT INTO ORDERS(CUSTOMER_ID,ORDER_DATE)
+VALUES
+(1,'10-8-25'),
+(2,'09-8-25'),
+(5,'8-8-2023'),
+(3,'23-09-21'),
+(6,'23-10-2025'),
+(7,'16-10-2016'),
+(4,'20-6-2005');
 
--- Insert data into Orders
-INSERT INTO Orders (Customer_ID, Total_Amount)
-VALUES 
-(1, 20500.99),
-(2, 499.00),
-(3, NULL); -- NULL total, maybe calculated later
+INSERT INTO ORDER_ITEMS 
+VALUES
+(1,1,1,1),
+(2,1,2,2),
+(3,2,3,1),
+(4,3,4,1),
+(5,4,1,1),
+(6,5,2,3);
 
--- Insert data into Order_Items
-INSERT INTO Order_Items (Order_ID, Product_ID, Quantity, Price)
-VALUES 
-(1, 1, 1, 19999.99),
-(1, 3, 1, 299.50),
-(2, 2, 1, 499.00);
+--UPDATING DATA 
 
--- Insert data into Payments
-INSERT INTO Payments (Order_ID, Amount, Payment_Method, Status)
-VALUES 
-(1, 20500.99, 'UPI', 'Completed'),
-(2, 499.00, 'Cash on Delivery', 'Pending');
+UPDATE PRODUCTS
+SET STOCK=STOCK*2
+WHERE PRODUCT_ID=2;
 
--- 
+
+UPDATE ORDER_ITEMS
+SET QUANTITY = QUANTITY+1;
+
+
+
+
+
+
+ 
+  
+ 
+ 
+ 
+ 
